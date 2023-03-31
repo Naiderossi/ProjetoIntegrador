@@ -15,8 +15,7 @@ public class LivroAp {
 	public void cadastraLivro(Livros elemento) {
 		elemento.setTitulo(JOptionPane.showInputDialog("Digite o título do livro:"));
 
-		//teste para mostrar como utilizar o github
-	 	//blablabla
+		//teste para github
 			
 	}
 	
