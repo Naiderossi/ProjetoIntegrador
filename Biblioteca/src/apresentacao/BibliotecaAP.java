@@ -16,7 +16,7 @@ public class BibliotecaAP {
 	public int menuLivro(){
 		int opcaoMenuLivro;
 		opcaoMenuLivro = Integer.parseInt(
-		JOptionPane.showInputDialog(null, "\t Livros \n1-Cadastrar\n2-Listar\n0-Sair")
+		JOptionPane.showInputDialog(null, "\t Livros \n 1-Cadastrar no fim \n 2-Cadastrar no ínicio \n 3- Listar \n 0-Sair")
 		);
 		return opcaoMenuLivro;
 	}

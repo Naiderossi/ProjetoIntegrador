@@ -1,6 +1,7 @@
 package controle;
 
 import apresentacao.BibliotecaAP;
+import modelo.Livros;
 
 public class BibliotecaControle {
 	
@@ -42,11 +43,20 @@ public class BibliotecaControle {
 	
 	public void menuLivro(int opcao) {
 		if (opcao == 1) {
-			listaLivros.adiciona(null);
+			Livros livro = new Livros();
+			listaLivros.adiciona(livro);
 		}
-		/*if (opcao == 2) {
-			listaLivros.listaDisciplina();
-		}*/
+		if (opcao == 2) {
+			Livros livro = new Livros();
+			listaLivros.incluirNoInicio(livro);
+		}
+		if (opcao == 3) {
+			System.out.println("Listar...");
+		}
+	}
+	
+	public ListaDeLivros getListaDeLivros() {
+		return this.listaLivros;
 	}
 
 
