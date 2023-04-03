@@ -1,8 +1,10 @@
 package apresentacao;
 
 import javax.swing.JOptionPane;
+import controle.BibliotecaControle;
 
 public class BibliotecaAP {
+		
 	
 	public int menuPrincipal(){
 		int opcaoMenuPrincipal;
@@ -16,9 +18,15 @@ public class BibliotecaAP {
 	public int menuLivro(){
 		int opcaoMenuLivro;
 		opcaoMenuLivro = Integer.parseInt(
-		JOptionPane.showInputDialog(null, "\t Livros \n 1-Cadastrar no fim \n 2-Cadastrar no ínicio \n 3- Listar \n 0-Sair")
+		JOptionPane.showInputDialog(null, "\t Livros \n 1-Cadastrar no fim \n 2-Cadastrar no ínicio \n 3- Listar \n4- Apagar Último \n 0-Sair")
 		);
 		return opcaoMenuLivro;
+	}
+	public void posicaoDesejo() {
+		int posicao;
+		posicao=Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a posicao"));
+		String str = "" ;
+		JOptionPane.showMessageDialog(null, str);
 	}
 	
 	

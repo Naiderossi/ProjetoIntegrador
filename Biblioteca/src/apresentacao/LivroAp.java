@@ -3,7 +3,7 @@ package apresentacao;
 import javax.swing.JOptionPane;
 
 import controle.ListaDeLivros;
-
+import modelo.Autor;
 import modelo.Livros;
 
 
@@ -13,12 +13,19 @@ public class LivroAp {
 	
 
 	public void cadastraLivro(Livros elemento) {
-		elemento.setTitulo(JOptionPane.showInputDialog("Digite o tÃ­tulo do livro:"));
-
+		elemento.setTitulo(JOptionPane.showInputDialog("Digite o título do livro:"));
+		elemento.setIsbn(JOptionPane.showInputDialog("Digite o isbn"));
+		elemento.setAutor(JOptionPane.showInputDialog("Digite autor do livro:"));
+		elemento.setEditora(JOptionPane.showInputDialog("Digite editora do livro:"));
+		elemento.setAnoPublicacao(Integer.parseInt((JOptionPane.showInputDialog("Digite o ano do livro:"))));
 		
-			
 	}
 	
+	public void ListaLivro(String listaLivro) {
+		JOptionPane.showMessageDialog(null,listaLivro);
+	
+	}
+	 
 	
 	
 }

@@ -1,5 +1,7 @@
 package controle;
 
+import javax.swing.JOptionPane;
+
 import apresentacao.BibliotecaAP;
 import modelo.Livros;
 
@@ -51,7 +53,15 @@ public class BibliotecaControle {
 			listaLivros.incluirNoInicio(livro);
 		}
 		if (opcao == 3) {
-			System.out.println("Listar...");
+			
+			listaLivros.ListaLivro();
+		}
+		if (opcao == 4) {
+			JOptionPane.showMessageDialog(null, "A lista contém "+listaLivros.getTamanho()+" livros!");
+			
+		}
+		if(opcao==5) {
+			biblioAP.posicaoDesejo();
 		}
 	}
 	

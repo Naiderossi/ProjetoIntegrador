@@ -1,6 +1,10 @@
 package controle;
+import java.util.ArrayList;
+
 import apresentacao.LivroAp;
+import modelo.Autor;
 import modelo.Livros;
+import controle.BibliotecaControle;
 
 
 public class ListaDeLivros {
@@ -9,7 +13,7 @@ public class ListaDeLivros {
 	
 	
 	private No<Livros> inicio;
-	private No<Livros> ultimo;
+	public No<Livros> ultimo;
 	private int tamanho;
 	
 	// incluir um Livro no inicio da lista
@@ -42,8 +46,11 @@ public class ListaDeLivros {
 		 
 		if(this.tamanho == 0) { // A lista está vazia
 			this.inicio = titulo;	
+			//System.out.println("entrou no tamanho=> zero  >incluir no fim<");
 		} else { // A lista não está vazia
 			this.ultimo.setProximo(titulo);
+			//System.out.println("agora a lista não está vazia  >incluir no fim<");
+			//System.out.println(tamanho);
 		}
 		
 		this.ultimo = titulo;
@@ -59,7 +66,8 @@ public class ListaDeLivros {
 	}
 	
 	// remove um Livro do final da lista e o retorna
-	public void removerDoFim() {
+
+		
 		
 		// percorrer toda a lista, salvando em uma variável o atual e o anterior
 		
@@ -71,7 +79,7 @@ public class ListaDeLivros {
 		
 		// alterar o tamanho (tamanho--)
 		
-	}
+	
 	
 	// retorna a quantidade de livros na lista
 	public int getTamanho() {
@@ -92,12 +100,25 @@ public class ListaDeLivros {
 		}
 		return aux.getElemento();
 	}
-
+	
+	
+	
 	@Override
 	public String toString() {
 		return "ListaDeLivros [inicio=" + inicio + "]";
 	}
-
+	
+	public void ListaLivro() {
+		
+		int i = 0;
+		String temporaria = "";
+		while(i<tamanho) {
+			temporaria+="Título do Livro: " + getLivro(i).getTitulo() + ", ISDN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publicação: " + getLivro(i).getAnoPublicacao() + "\n"  ;
+		
+			i++;
+		}
+		livroAp.ListaLivro(temporaria);
+	}
 	
 	
 	
