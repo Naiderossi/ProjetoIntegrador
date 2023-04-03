@@ -14,7 +14,7 @@ public class BibliotecaControle {
 	ListaDeLivros listaLivros = new ListaDeLivros();
 
 	
-	// no construtor do SAControle � acionado o popula e o menu principal
+	// no construtor do SAControle ï¿½ acionado o popula e o menu principal
 	public BibliotecaControle() {
 		//popula();
 		int opcao = 5;
@@ -31,8 +31,7 @@ public class BibliotecaControle {
 	}
 	
 
-	// antes de adicionar um aluno, ele vai at� o curso para recebe-lo e passalo
-	// ao aluno
+	
 	public void menuAutor(int opcao) {
 		if (opcao == 1) {
 			listaAutores.adicionaAutor();
@@ -57,7 +56,7 @@ public class BibliotecaControle {
 			listaLivros.ListaLivro();
 		}
 		if (opcao == 4) {
-			JOptionPane.showMessageDialog(null, "A lista cont�m "+listaLivros.getTamanho()+" livros!");
+			JOptionPane.showMessageDialog(null, "A lista contém "+listaLivros.getTamanho()+" livros!");
 			
 		}
 		if(opcao==5) {
