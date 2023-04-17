@@ -45,11 +45,11 @@ public class BibliotecaControle {
 	public void menuLivro(int opcao) {
 		if (opcao == 1) {
 			Livros livro = new Livros();
-			listaLivros.adiciona(livro);
+			listaLivros.adiciona(livro, listaAutores.selecionaAutor());
 		}
 		if (opcao == 2) {
 			Livros livro = new Livros();
-			listaLivros.incluirNoInicio(livro);
+			listaLivros.incluirNoInicio(livro, listaAutores.selecionaAutor());
 		}
 		if (opcao == 3) {
 			
