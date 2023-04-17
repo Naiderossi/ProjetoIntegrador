@@ -17,15 +17,15 @@ public class ListaDeLivros {
 	private int tamanho;
 	
 	// incluir um Livro no inicio da lista
-	public void incluirNoInicio(Livros elemento) {
+	public void incluirNoInicio(Livros elemento, Autor autor) {
 		
 		No<Livros> titulo = new No<Livros> (elemento);
 		//Livros livro = new Livros();
 		 
-		if(this.tamanho == 0) { // A lista est· vazia
+		if(this.tamanho == 0) { // A lista est√° vazia
 			this.inicio = titulo;
 			this.ultimo = titulo;
-		} else { // A lista n„o est· vazia
+		} else { // A lista n√£o est√° vazia
 			
 			No<Livros> primeiro = this.inicio;
 			
@@ -33,36 +33,49 @@ public class ListaDeLivros {
 			this.inicio.setProximo(primeiro);
 		}
 		
-		livroAp.cadastraLivro(elemento);
+		livroAp.cadastraLivro(elemento, autor);
 		this.tamanho++;
 		
 	}
 	
 	// incluir um Livro no final da lista
+<<<<<<< HEAD
 	public void adiciona (Livros elemento) { 
+=======
+	public void adiciona (Livros elemento, Autor autor) { // pela proposta da atividade, esse metodo deveria se chamar incluirNoFIm, veririfar se √© necess√°rio alterar
+>>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
 		
 		No<Livros> titulo = new No<Livros> (elemento);
 		
 		 
-		if(this.tamanho == 0) { // A lista est· vazia
+		if(this.tamanho == 0) { // A lista est√° vazia
 			this.inicio = titulo;	
+<<<<<<< HEAD
 			
 		} else { // A lista n„o est· vazia
 			this.ultimo.setProximo(titulo);
 			
+=======
+			//System.out.println("entrou no tamanho=> zero  >incluir no fim<");
+		} else { // A lista n√£o est√° vazia
+			this.ultimo.setProximo(titulo);
+			//System.out.println("agora a lista n√£o est√° vazia  >incluir no fim<");
+			//System.out.println(tamanho);
+>>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
 		}
 		
 		this.ultimo = titulo;
 		
-		livroAp.cadastraLivro(elemento);
+		livroAp.cadastraLivro(elemento, autor);
 		this.tamanho++;
 		
 	}
 	
-	// ordenar os objetos Livro presentes na lista em ordem alfabÈtica
+	// ordenar os objetos Livro presentes na lista em ordem alfab√©tica
 	public void ordenar() {
 		
 	}
+<<<<<<< HEAD
 	public void deletar() {
 			
 			int i = 0;
@@ -83,13 +96,30 @@ public class ListaDeLivros {
 			this.tamanho--;		
 			
 		}
+=======
+	
+	// remove um Livro do final da lista e o retorna
+
+		
+		
+		// percorrer toda a lista, salvando em uma vari√°vel o atual e o anterior
+		
+		// quando o atual for o ultimo (podes comparar com o tamanho)
+		
+		// apagar a posi√ß√£o atual
+		
+		// setar o pr√≥ximo do anterior como null
+		
+		// alterar o tamanho (tamanho--)
+		
+>>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
 	
 	
 	public int getTamanho() {
 		return this.tamanho;
 	}
 	
-	// retorna o Livro que est· na posiÁ„o da lista indicada no argumento (par‚metro)
+	// retorna o Livro que est√° na posi√ß√£o da lista indicada no argumento (par√¢metro)
 	public Livros getLivro(int posicao) {
 		
 		int i = 0;
@@ -116,7 +146,11 @@ public class ListaDeLivros {
 		int i = 0;
 		String temporaria = "";
 		while(i<tamanho) {
+<<<<<<< HEAD
 			temporaria+="TÌtulo do Livro: " + getLivro(i).getTitulo() + ", ISBN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publicaÁ„o: " + getLivro(i).getAnoPublicacao() + "\n"  ;
+=======
+			temporaria+="T√≠tulo do Livro: " + getLivro(i).getTitulo() + ", ISDN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publica√ß√£o: " + getLivro(i).getAnoPublicacao() + "\n"  ;
+>>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
 		
 			i++;
 		}
