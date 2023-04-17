@@ -47,21 +47,24 @@ public class BibliotecaControle {
 		if (opcao == 1) {
 			Livros livro = new Livros();
 			listaLivros.adiciona(livro);
-		}
+		}else
 		if (opcao == 2) {
 			Livros livro = new Livros();
 			listaLivros.incluirNoInicio(livro);
-		}
+		}else
 		if (opcao == 3) {
 			
 			listaLivros.ListaLivro();
-		}
+		}else
 		if (opcao == 4) {
 			JOptionPane.showMessageDialog(null, "A lista contém "+listaLivros.getTamanho()+" livros!");
 			
-		}
+		}else
 		if(opcao==5) {
-			biblioAP.posicaoDesejo();
+			biblioAP.posicaoDesejo(listaLivros);
+			
+		}else if(opcao==6) {
+			listaLivros.deletar();
 		}
 	}
 	

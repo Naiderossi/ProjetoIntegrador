@@ -39,18 +39,17 @@ public class ListaDeLivros {
 	}
 	
 	// incluir um Livro no final da lista
-	public void adiciona (Livros elemento) { // pela proposta da atividade, esse metodo deveria se chamar incluirNoFIm, veririfar se é necessário alterar
+	public void adiciona (Livros elemento) { 
 		
 		No<Livros> titulo = new No<Livros> (elemento);
-		//Livros livro = new Livros();
+		
 		 
 		if(this.tamanho == 0) { // A lista está vazia
 			this.inicio = titulo;	
-			//System.out.println("entrou no tamanho=> zero  >incluir no fim<");
+			
 		} else { // A lista não está vazia
 			this.ultimo.setProximo(titulo);
-			//System.out.println("agora a lista não está vazia  >incluir no fim<");
-			//System.out.println(tamanho);
+			
 		}
 		
 		this.ultimo = titulo;
@@ -64,24 +63,28 @@ public class ListaDeLivros {
 	public void ordenar() {
 		
 	}
+	public void deletar() {
+			
+			int i = 0;
+			No<Livros> atual = this.inicio;
+			No<Livros> anterior = null;
+			
+			while(i < this.tamanho) {
+			
+				anterior = atual;
+				atual = atual.getProximo();
+				
+				i++;
+			}
+			
+			anterior.setProximo(null);
+			this.ultimo = anterior;
+			
+			this.tamanho--;		
+			
+		}
 	
-	// remove um Livro do final da lista e o retorna
-
-		
-		
-		// percorrer toda a lista, salvando em uma variável o atual e o anterior
-		
-		// quando o atual for o ultimo (podes comparar com o tamanho)
-		
-		// apagar a posição atual
-		
-		// setar o próximo do anterior como null
-		
-		// alterar o tamanho (tamanho--)
-		
 	
-	
-	// retorna a quantidade de livros na lista
 	public int getTamanho() {
 		return this.tamanho;
 	}
@@ -113,12 +116,14 @@ public class ListaDeLivros {
 		int i = 0;
 		String temporaria = "";
 		while(i<tamanho) {
-			temporaria+="Título do Livro: " + getLivro(i).getTitulo() + ", ISDN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publicação: " + getLivro(i).getAnoPublicacao() + "\n"  ;
+			temporaria+="Título do Livro: " + getLivro(i).getTitulo() + ", ISBN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publicação: " + getLivro(i).getAnoPublicacao() + "\n"  ;
 		
 			i++;
 		}
 		livroAp.ListaLivro(temporaria);
 	}
+
+	
 	
 	
 	
