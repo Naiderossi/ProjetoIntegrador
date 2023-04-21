@@ -18,7 +18,16 @@ private ArrayList<Autor> listaAutor = new ArrayList<Autor>();
 		autorAP.cadastraAutor(autor);
 		listaAutor.add(autor);
 	}
-
+	public Autor selecionaAutor() {
+		String listaTemporaria = "";
+		int n = listaAutor.size();
+		for (int i = 0; i < n; i++) {
+			listaTemporaria += Integer.toString(i) + " - "
+					+ listaAutor.get(i).getNome() + "\n";
+		}
+		int id= autorAP.selecionaAutor(listaTemporaria);
+		return listaAutor.get(id);
+	}
 	
 	
 	public void listaAutor() {

@@ -15,8 +15,13 @@ public class AutorAp {
 	}
 	
 	
+	
 	public void listaAutor(String listaAutor){	
 		JOptionPane.showMessageDialog(null,listaAutor);
+	}
+	
+	public int selecionaAutor(String listaNomeAutor){	
+		return Integer.parseInt(JOptionPane.showInputDialog("Informe o codigo do autor:\n\n"+ listaNomeAutor ));
 	}
 
 }

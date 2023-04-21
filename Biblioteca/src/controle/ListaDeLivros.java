@@ -1,5 +1,13 @@
 package controle;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import apresentacao.BibliotecaAP;
+import modelo.Livros;
+
 
 import apresentacao.LivroAp;
 import modelo.Autor;
@@ -39,29 +47,20 @@ public class ListaDeLivros {
 	}
 	
 	// incluir um Livro no final da lista
-<<<<<<< HEAD
-	public void adiciona (Livros elemento) { 
-=======
-	public void adiciona (Livros elemento, Autor autor) { // pela proposta da atividade, esse metodo deveria se chamar incluirNoFIm, veririfar se √© necess√°rio alterar
->>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
+
+	
+	public void adiciona (Livros elemento, Autor autor) {  
+
 		
 		No<Livros> titulo = new No<Livros> (elemento);
 		
 		 
 		if(this.tamanho == 0) { // A lista est√° vazia
 			this.inicio = titulo;	
-<<<<<<< HEAD
-			
-		} else { // A lista n„o est· vazia
-			this.ultimo.setProximo(titulo);
-			
-=======
-			//System.out.println("entrou no tamanho=> zero  >incluir no fim<");
+
 		} else { // A lista n√£o est√° vazia
 			this.ultimo.setProximo(titulo);
-			//System.out.println("agora a lista n√£o est√° vazia  >incluir no fim<");
-			//System.out.println(tamanho);
->>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
+			
 		}
 		
 		this.ultimo = titulo;
@@ -73,9 +72,17 @@ public class ListaDeLivros {
 	
 	// ordenar os objetos Livro presentes na lista em ordem alfab√©tica
 	public void ordenar() {
-		
+			ArrayList<String> titulos = new ArrayList<String>();
+			int i = 0;
+			while(i < this.tamanho) {
+				titulos.add(getLivro(i).getTitulo()) ;
+				i++;
+			}
+			Collections.sort(titulos);
+			JOptionPane.showMessageDialog(null, titulos.toString());
+			
 	}
-<<<<<<< HEAD
+	
 	public void deletar() {
 			
 			int i = 0;
@@ -96,7 +103,7 @@ public class ListaDeLivros {
 			this.tamanho--;		
 			
 		}
-=======
+
 	
 	// remove um Livro do final da lista e o retorna
 
@@ -112,7 +119,7 @@ public class ListaDeLivros {
 		
 		// alterar o tamanho (tamanho--)
 		
->>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
+
 	
 	
 	public int getTamanho() {
@@ -146,12 +153,8 @@ public class ListaDeLivros {
 		int i = 0;
 		String temporaria = "";
 		while(i<tamanho) {
-<<<<<<< HEAD
-			temporaria+="TÌtulo do Livro: " + getLivro(i).getTitulo() + ", ISBN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publicaÁ„o: " + getLivro(i).getAnoPublicacao() + "\n"  ;
-=======
-			temporaria+="T√≠tulo do Livro: " + getLivro(i).getTitulo() + ", ISDN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publica√ß√£o: " + getLivro(i).getAnoPublicacao() + "\n"  ;
->>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
-		
+
+			temporaria+="TÌtulo do Livro: " + getLivro(i).getTitulo() + " Autor do livro: " + getLivro(i).getAutor().getNome()+", ISBN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publicaÁ„o: " + getLivro(i).getAnoPublicacao() + "\n"  ;
 			i++;
 		}
 		livroAp.ListaLivro(temporaria);

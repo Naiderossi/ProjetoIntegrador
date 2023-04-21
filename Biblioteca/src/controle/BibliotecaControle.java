@@ -43,38 +43,50 @@ public class BibliotecaControle {
 
 	
 	public void menuLivro(int opcao) {
-		if (opcao == 1) {
-			Livros livro = new Livros();
-<<<<<<< HEAD
-			listaLivros.adiciona(livro);
-		}else
-		if (opcao == 2) {
-			Livros livro = new Livros();
-			listaLivros.incluirNoInicio(livro);
-		}else
-=======
-			listaLivros.adiciona(livro, listaAutores.selecionaAutor());
-		}
-		if (opcao == 2) {
-			Livros livro = new Livros();
-			listaLivros.incluirNoInicio(livro, listaAutores.selecionaAutor());
-		}
->>>>>>> 2c5a9b1f74282a212f80b3ce4a228d21b9debd35
-		if (opcao == 3) {
+		
+			if (opcao == 1) {
+				Livros livro = new Livros();
+	
+				listaLivros.adiciona(livro, listaAutores.selecionaAutor());
+				
+			}else 
 			
-			listaLivros.ListaLivro();
-		}else
-		if (opcao == 4) {
-			JOptionPane.showMessageDialog(null, "A lista contÃ©m "+listaLivros.getTamanho()+" livros!");
+			if (opcao == 2) {
+				Livros livro = new Livros();
+				listaLivros.incluirNoInicio(livro, listaAutores.selecionaAutor());
+				
+			}else 
+	
+			if (opcao == 3) {
+				
+				listaLivros.ListaLivro();
 			
-		}else
-		if(opcao==5) {
-			biblioAP.posicaoDesejo(listaLivros);
+			}else 
+			if (opcao == 4) {
+				JOptionPane.showMessageDialog(null, "A lista contem "+listaLivros.getTamanho()+" livros!");
+				
+			}else 
+			if(opcao==5) {
+				biblioAP.posicaoDesejo(listaLivros);
+				
+			}else if(opcao==6) {
+				listaLivros.deletar();
+				
+			}
+			else if(opcao==7) {
+				 listaLivros.ordenar();
+			}
+			else { //Caso o usuário nao digite nem um número correto. 
+				
+					JOptionPane.showMessageDialog(null, "Você digitou o código errado!");
+					menuLivro(biblioAP.menuLivro());
+				}
+			}
 			
-		}else if(opcao==6) {
-			listaLivros.deletar();
-		}
-	}
+		
+	
+		
+		
 	
 	public ListaDeLivros getListaDeLivros() {
 		return this.listaLivros;

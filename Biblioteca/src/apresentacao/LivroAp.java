@@ -13,9 +13,10 @@ public class LivroAp {
 	
 
 	public void cadastraLivro(Livros elemento, Autor autor) {
-		elemento.setTitulo(JOptionPane.showInputDialog("Digite o título do livro:"));
+		elemento.setTitulo(JOptionPane.showInputDialog("Digite o titulo do livro:"));
 		elemento.setIsbn(JOptionPane.showInputDialog("Digite o isbn"));
 		//elemento.setAutor(JOptionPane.showInputDialog("Digite autor do livro:"));
+		elemento.setAutor(autor);
 		elemento.setEditora(JOptionPane.showInputDialog("Digite editora do livro:"));
 		elemento.setAnoPublicacao(Integer.parseInt((JOptionPane.showInputDialog("Digite o ano do livro:"))));
 		
