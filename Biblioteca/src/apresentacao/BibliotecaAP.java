@@ -16,18 +16,30 @@ public class BibliotecaAP {
 	}
 	
 	
-	public int menuLivro(){
+	ppublic int menuLivro(){
 		int opcaoMenuLivro;
 		opcaoMenuLivro = Integer.parseInt(
-		JOptionPane.showInputDialog(null, "\t Livros \n 1-Cadastrar no fim \n 2-Cadastrar no ínicio \n 3- Listar \n4- Tamanho da Lista\n 5- Posição\n 6- Deletar Livro\n 7- Ordenar em ordem alfabética \n 0-Sair")
+		JOptionPane.showInputDialog(null, "\t Livros "
+				+ "\n 1-Cadastrar no fim "
+				+ "\n 2-Cadastrar no inicio "
+				+ "\n 3- Listar "
+				+ "\n 4- Tamanho da Lista "
+				+ "\n 5- PosiÃ§Ã£o "
+				+ "\n 6- Deletar Livro "
+				+ "\n 7- Ordenar em ordem alfabÃ©tica "
+				+ "\n 8- Buscar livro por autor "
+				+ "\n 9- Buscar livro por ano de publicacao"
+				+ "\n 10- Buscar livro usando uma palavra-chave"
+				+ "\n 0-Sair")
 		);
 		return opcaoMenuLivro;
 	}
+	
 	public void posicaoDesejo(ListaDeLivros listaLivros) {
 		int posicao;
 		posicao=Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a posicao"));
 		
-		JOptionPane.showMessageDialog(null, listaLivros.getLivro(posicao).getTitulo()+" é o livro localizado na posição "+posicao);
+		JOptionPane.showMessageDialog(null, listaLivros.getLivro(posicao).getTitulo()+" Ã© o livro localizado na posiÃ§Ã£o "+posicao);
 	}
 	
 	public int menuAutor(){
