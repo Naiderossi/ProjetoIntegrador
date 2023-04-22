@@ -2,16 +2,11 @@ package controle;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import javax.swing.JOptionPane;
-
 import apresentacao.BibliotecaAP;
 import modelo.Livros;
-
-
 import apresentacao.LivroAp;
 import modelo.Autor;
-import modelo.Livros;
 import controle.BibliotecaControle;
 
 
