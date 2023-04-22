@@ -20,6 +20,26 @@ public class Autor {
 		this.paisOrigem = paisOrigem;
 	}
 	
+	@Override
+	public String toString() {
+		return "Nome do autor " + nome +
+                "\nPaís de origem: " + paisOrigem;
+                
+    }
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (obj == this) {
+	         return true;
+	      }
+	      if (!(obj instanceof Autor)) {
+	         return false;
+	      }
+	      
+	      Autor autor = (Autor) obj;
+	      return (autor).equals(autor.getNome()); 
+	    	
+	}
 
 	
 	
