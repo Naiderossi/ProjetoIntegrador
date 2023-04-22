@@ -35,6 +35,7 @@ public class BibliotecaControle {
 	public void menuAutor(int opcao) {
 		if (opcao == 1) {
 			listaAutores.adicionaAutor();
+			JOptionPane.showMessageDialog(null, "Autor cadastrado com sucesso!" + "\n" + autor.toString());
 		}
 		if (opcao == 2) {
 			listaAutores.listaAutor();
@@ -48,13 +49,13 @@ public class BibliotecaControle {
 				Livros livro = new Livros();
 	
 				listaLivros.adiciona(livro, listaAutores.selecionaAutor());
-				
+				JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!" + "\n" + livro.toString());
 			}else 
 			
 			if (opcao == 2) {
 				Livros livro = new Livros();
 				listaLivros.incluirNoInicio(livro, listaAutores.selecionaAutor());
-				
+				JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!" + "\n" + livro.toString());
 			}else 
 	
 			if (opcao == 3) {
