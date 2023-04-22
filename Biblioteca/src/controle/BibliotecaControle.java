@@ -14,9 +14,9 @@ public class BibliotecaControle {
 	ListaDeLivros listaLivros = new ListaDeLivros();
 
 	
-	// no construtor do SAControle ï¿½ acionado o popula e o menu principal
+	// no construtor do SAControle Ã¯Â¿Â½ acionado o popula e o menu principal
 	public BibliotecaControle() {
-		//popula();
+		popula();
 		int opcao = 5;
 		do {
 			opcao = biblioAP.menuPrincipal();
@@ -76,21 +76,54 @@ public class BibliotecaControle {
 			else if(opcao==7) {
 				 listaLivros.ordenar();
 			}
-			else { //Caso o usu�rio nao digite nem um n�mero correto. 
+			
+			else if(opcao==8) {
+			
+			 listaLivros.ListaLivroPorAutor(listaAutores.selecionaAutor());
+			}
+		
+			else if(opcao==9) {
+			
+			String input1 = JOptionPane.showInputDialog("Digite o ano de inicio do intervalo:");
+			int anoInicio = Integer.parseInt(input1);
+			
+			String input2 = JOptionPane.showInputDialog("Digite o ano de fim do intervalo:");
+			int anoFim = Integer.parseInt(input2);
+			
+			 listaLivros.ListaLivroPorAnoPubli(anoInicio, anoFim);
+			}
+
+			else if(opcao==10) {
+			String palavraChave = JOptionPane.showInputDialog(null, "Digite uma palavra ou frase presente no título dos livros desejados:");
+			
+			listaLivros.ListaLivroPorPalavraChave(palavraChave);
+			
+			}
+			else { //Caso o usuário nao digite nem um número correto. 
 				
-					JOptionPane.showMessageDialog(null, "Voc� digitou o c�digo errado!");
+					JOptionPane.showMessageDialog(null, "Você digitou o código errado!");
 					menuLivro(biblioAP.menuLivro());
 				}
 			}
 			
-		
-	
-		
-		
-	
+
 	public ListaDeLivros getListaDeLivros() {
 		return this.listaLivros;
 	}
+	
+	public void popula() {
+		populaAutor();
+	
+	}
+		
+	public void populaAutor() {
+	    listaAutores.populaAutor("Ferreira Gullar", "Brasil");
+	    listaAutores.populaAutor("Miguel de Cervantes", "Espanha");
+	    listaAutores.populaAutor("William Shakespeare", "Reino Unido");
+	    
+	}
+	
+	
 
 
 }
