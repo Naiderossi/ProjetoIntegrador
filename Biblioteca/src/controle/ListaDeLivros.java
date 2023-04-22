@@ -30,10 +30,10 @@ public class ListaDeLivros {
 		No<Livros> titulo = new No<Livros> (elemento);
 		//Livros livro = new Livros();
 		 
-		if(this.tamanho == 0) { // A lista está vazia
+		if(this.tamanho == 0) { // A lista estÃ¡ vazia
 			this.inicio = titulo;
 			this.ultimo = titulo;
-		} else { // A lista não está vazia
+		} else { // A lista nÃ£o estÃ¡ vazia
 			
 			No<Livros> primeiro = this.inicio;
 			
@@ -55,10 +55,10 @@ public class ListaDeLivros {
 		No<Livros> titulo = new No<Livros> (elemento);
 		
 		 
-		if(this.tamanho == 0) { // A lista está vazia
+		if(this.tamanho == 0) { // A lista estÃ¡ vazia
 			this.inicio = titulo;	
 
-		} else { // A lista não está vazia
+		} else { // A lista nÃ£o estÃ¡ vazia
 			this.ultimo.setProximo(titulo);
 			
 		}
@@ -70,7 +70,7 @@ public class ListaDeLivros {
 		
 	}
 	
-	// ordenar os objetos Livro presentes na lista em ordem alfabética
+	// ordenar os objetos Livro presentes na lista em ordem alfabÃ©tica
 	public void ordenar() {
 			ArrayList<String> titulos = new ArrayList<String>();
 			int i = 0;
@@ -105,28 +105,11 @@ public class ListaDeLivros {
 		}
 
 	
-	// remove um Livro do final da lista e o retorna
-
-		
-		
-		// percorrer toda a lista, salvando em uma variável o atual e o anterior
-		
-		// quando o atual for o ultimo (podes comparar com o tamanho)
-		
-		// apagar a posição atual
-		
-		// setar o próximo do anterior como null
-		
-		// alterar o tamanho (tamanho--)
-		
-
-	
-	
 	public int getTamanho() {
 		return this.tamanho;
 	}
 	
-	// retorna o Livro que está na posição da lista indicada no argumento (parâmetro)
+	// retorna o Livro que estÃ¡ na posiÃ§Ã£o da lista indicada no argumento (parÃ¢metro)
 	public Livros getLivro(int posicao) {
 		
 		int i = 0;
@@ -141,12 +124,7 @@ public class ListaDeLivros {
 		return aux.getElemento();
 	}
 	
-	
-	
-	@Override
-	public String toString() {
-		return "ListaDeLivros [inicio=" + inicio + "]";
-	}
+
 	
 	public void ListaLivro() {
 		
@@ -154,16 +132,55 @@ public class ListaDeLivros {
 		String temporaria = "";
 		while(i<tamanho) {
 
-			temporaria+="T�tulo do Livro: " + getLivro(i).getTitulo() + " Autor do livro: " + getLivro(i).getAutor().getNome()+", ISBN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publica��o: " + getLivro(i).getAnoPublicacao() + "\n"  ;
+			temporaria+="Título do Livro: " + getLivro(i).getTitulo() + " Autor do livro: " + getLivro(i).getAutor().getNome()+", ISBN: " + getLivro(i).getIsbn() + ", Editora: " + getLivro(i).getEditora() + ", ano de publicação: " + getLivro(i).getAnoPublicacao() + "\n"  ;
 			i++;
 		}
 		livroAp.ListaLivro(temporaria);
 	}
+	
+	public void ListaLivroPorAutor(Autor autor) {
+		
+		String temporaria = "";
+		int n = tamanho;
+		for (int i = 0; i < n; i++) {
+			if ((getLivro(i).getAutor().getNome().equals(autor.getNome()))) {
+				temporaria += getLivro(i).getTitulo()+ "\n";
+			}
+		}
+		livroAp.ListaLivro(temporaria);
+	}
+	
+	
+	
+	public void ListaLivroPorAnoPubli(int anoInicio, int anoFim) {
+		
+		String temporaria = "";
+		int n = tamanho;
+		for (int i = 0; i < n; i++) {
+			if ((getLivro(i).getAnoPublicacao() >= anoInicio && (getLivro(i).getAnoPublicacao() <= anoFim))) {
+				temporaria += getLivro(i).getTitulo()+ "\n";
+			}
+		}
+		livroAp.ListaLivro(temporaria);
+	}
+	
+	
+	public void ListaLivroPorPalavraChave(String palavraChave) {
 
+		String temporaria = "";
+		int n = tamanho;
+		for (int i = 0; i < n; i++) {	
+			if (getLivro(i).getTitulo().toLowerCase().contains(palavraChave.toLowerCase())) {
+				temporaria += "Foram encontrados os seguintes livros: " + 
+			"\nTítulo: " + getLivro(i).getTitulo()+ 
+			"\nAutor: " + getLivro(i).getAutor().getNome() +
+			"\nEditora: " + getLivro(i).getEditora() +
+			"\n\n";
+			}
+		}
+		livroAp.ListaLivro(temporaria);	
 	
-	
-	
-	
+	}
 	
 
 }
