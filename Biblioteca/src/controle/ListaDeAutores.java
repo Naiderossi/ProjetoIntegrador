@@ -41,6 +41,19 @@ private ArrayList<Autor> listaAutor = new ArrayList<Autor>();
 		}
 		autorAP.listaAutor(listaTemporaria);
 	}
+	
+	public void populaAutor(String nome, String pais) {
+		Autor autor = new Autor();
+		autor.setNome(nome);
+		autor.setPaisOrigem(pais);
+		listaAutor.add(autor);
+	}
+
+	
+	
+	public Autor obtemAutorParaPopular(int id) {
+		return listaAutor.get(id);
+	}
 		
 		
 }
