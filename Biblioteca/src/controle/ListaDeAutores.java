@@ -41,16 +41,6 @@ private ArrayList<Autor> listaAutor = new ArrayList<Autor>();
 		}
 		autorAP.listaAutor(listaTemporaria);
 	}
-		public Autor selecionaAutor() {
-		String listaTemporaria = "";
-		int n = listaAutor.size();
-		for (int i = 0; i < n; i++) {
-			listaTemporaria += Integer.toString(i) + " - "
-					+ listaAutor.get(i).getNome() + "\n";
-		}
-		int id= autorAP.selecionaAutor(listaTemporaria);
-		return listaAutor.get(id);
-	}
 		
 		
 }
