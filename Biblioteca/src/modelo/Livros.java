@@ -44,6 +44,30 @@ public class Livros {
 		this.anoPublicacao = anoPublicacao;
 	}
 	
+	@Override
+	public String toString() {
+		return "Título: " + titulo +
+                "\nISBN: " + isbn +
+                "\nEditora: " + editora +
+                "\nAno de publicação: " + anoPublicacao +
+                "\nAutor: " + autor.getNome() +
+                "\nPaís de origem do autor: " + autor.getPaisOrigem();
+    }
+	
+	@Override
+	public boolean equals(Object obj) {
+	
+		if (obj == this) {
+	         return true;
+	      }
+	      if (!(obj instanceof Livros)) {
+	         return false;
+	      }
+	      Livros livro = (Livros) obj;
+	      return titulo.equalsIgnoreCase(livro.getTitulo()); 
+	    	
+	}
+	
 	
 	
 	
